@@ -24,3 +24,15 @@ Route::get('/login', function () {
 Route::get('/dashboard', function () {
     return view('layouts/app');
 });
+Route::get('/lihatpengguna', function () {
+    return view('admin/lihatpengguna');
+});
+Route::get('/tambahpasien', function () {
+    return view('admin/modaltambahpasien');
+});
+Route::get('/editpasien', function () {
+    return view('admin/modaleditpasien');
+});
+Route::get('/deletepasien', function () {
+    return view('admin/modaldeletepasien');
+});
