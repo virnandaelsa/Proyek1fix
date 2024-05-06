@@ -34,10 +34,7 @@ Route::get('/tambahpasien', function () {
 Route::get('/lihatmakanan', function () {
     return view('admin/lihatmakanan');
 });
-<<<<<<< HEAD
-Route::get('/lihatkonsul', function () {
-    return view('admin/lihatkonsul');
-});
-=======
 
->>>>>>> e8505d923008ebe75940f0c9d39f13063381b37f
+Route::get('/lihatkonsul', function () {
+    return view('admin/lihatkonsultasi');
+});

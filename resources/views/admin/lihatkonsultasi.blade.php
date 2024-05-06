@@ -73,7 +73,7 @@
 </div>
 <!-- /.content-wrapper -->
 
-@include('admin/modaltambahkonsul') 
+@include('admin/modaltambahkonsultasi') 
 
 @endsection
 

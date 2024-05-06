@@ -38,7 +38,7 @@
               Kelola Akun
             </p>
           </a>
-          <a href="#" class="nav-link">
+          <a href="/lihatmakanan" class="nav-link">
             <i class="nav-icon fas fa-list"></i>
             <p>
               List Makanan
