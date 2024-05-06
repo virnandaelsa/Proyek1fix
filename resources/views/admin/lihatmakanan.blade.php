@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Lihat Data Pengguna')
+@section('title', 'Lihat List Makanan')
 
 @section('content')
 <div class="content-wrapper">
@@ -9,7 +9,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Data Akun Pengguna</h1>
+                    <h1>Data Makanan</h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -25,20 +25,11 @@
                             <!-- Button Tambah -->
                             <div class="text-right">
                                 <div class="dropdown">
-                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#modalTambahMakanan">
                                         <i class="fas fa-file"></i> Tambah
                                     </button>
-                                    <div class="dropdown-menu">
-                                        <button class="dropdown-item" type="button" data-toggle="modal" data-target="#modalTambahPasien">Tambah Pasien</button>
-                                        <button class="dropdown-item" type="button" data-toggle="modal" data-target="#modalTambahAhliGizi">Tambah Ahli Gizi</button>
-                                        <button class="dropdown-item" type="button" data-toggle="modal" data-target="#modalTambahChef">Tambah Chef</button>
-                                    </div>
-                                     
                                 </div>
-                                @include('admin/modaltambahahligizi')
-                                @include('admin/modaltambahchef') 
                             </div>
-
 
                             <!-- End Button Tambah -->
                         </div>
@@ -49,15 +40,21 @@
                                 <thead>
                                     <tr class="text-center">
                                         <th>No</th>
-                                        <th>Id</th>
-                                        <th>Nama Lengkap</th>
-                                        <th>Role</th>
+                                        <th>KODE</th>
+                                        <th>NAMA MAKANAN</th>
+                                        <th>PROTEIN (G)</th>
+                                        <th>LEMAK (G)</th>
+                                        <th>KARBOHIDRAT (G)</th>
+                                        <th>Kategori</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td class="text-center"></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
                                         <td></td>
                                         <td></td>
                                         <td></td>
@@ -74,8 +71,6 @@
                                                 </button>
                                                 
                                             </div>
-                                            @include('admin/modaleditpasien') 
-                                            @include('admin/modaldeletepengguna')
                                         </td>
                                     </tr>
                                     <!-- Tambahkan baris tabel lainnya di sini -->
@@ -95,7 +90,7 @@
     <!-- /.content -->
 </div>
 <!-- /.content-wrapper --> 
-@include('admin/modaltambahpasien')  
+@include('admin/tambahmakanan')  
 
 @endsection
 

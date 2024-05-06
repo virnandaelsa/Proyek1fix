@@ -1,6 +1,6 @@
 <!-- delete_modal.blade.php -->
 
-<div class="modal fade" id="deleteModal">
+<div class="modal fade" id="modalDelete">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

@@ -30,9 +30,8 @@ Route::get('/lihatpengguna', function () {
 Route::get('/tambahpasien', function () {
     return view('admin/modaltambahpasien');
 });
-Route::get('/editpasien', function () {
-    return view('admin/modaleditpasien');
+
+Route::get('/lihatmakanan', function () {
+    return view('admin/lihatmakanan');
 });
-Route::get('/deletepasien', function () {
-    return view('admin/modaldeletepasien');
-});
+
