@@ -36,3 +36,6 @@ Route::get('/editpasien', function () {
 Route::get('/deletepasien', function () {
     return view('admin/modaldeletepasien');
 });
+Route::get('/lihatkonsul', function () {
+    return view('admin/lihatkonsul');
+});
