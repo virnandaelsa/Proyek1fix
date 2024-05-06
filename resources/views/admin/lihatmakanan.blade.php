@@ -61,15 +61,16 @@
                                         <td>
                                             <div class="text-center">
                                                 <!-- Button Edit -->
-                                                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modalEdit">
+                                                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modalEditMakanan">
                                                     Edit
                                                 </button>
 
                                                 <!-- Button Hapus -->
-                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDelete">
+                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDeleteMakanan">
                                                     Hapus
                                                 </button>
-                                                
+                                                @include('admin/editmakanan')
+                                                @include('admin/deletemakanan')
                                             </div>
                                         </td>
                                     </tr>

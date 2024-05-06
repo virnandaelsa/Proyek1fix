@@ -1,5 +1,5 @@
 <!-- edit_modal.blade.php -->
-<div class="modal fade" id="modalEdit">
+<div class="modal fade" id="modalEditMakanan">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
