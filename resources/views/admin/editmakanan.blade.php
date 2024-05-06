@@ -1,9 +1,9 @@
 <!-- edit_modal.blade.php -->
-<div class="modal fade" id="modalEdit">
+<div class="modal fade" id="modalEditMakanan">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Edit Data</h4>
+                <h4 class="modal-title">Edit Data Makanan</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -11,22 +11,24 @@
             <div class="modal-body">
                 <!-- Isi form edit di sini -->
                 <div class="form-group">
-                    <label for="edit_nama">Nama Pasien:</label>
-                    <input type="text" class="form-control" id="edit_nama" name="edit_nama">
+                    <label for="edit_nama">Nama Makanan:</label>
+                    <input type="text" class="form-control" id="edit_nama" name="edit_namamakanan">
                 </div>
                 <div class="form-group">
-                    <label for="edit_nama">Nomor Telepon:</label>
-                    <input type="text" class="form-control" id="edit_notlp" name="edit_notlp">
+                    <label for="edit_nama">Protein:</label>
+                    <input type="text" class="form-control" id="edit_protein" name="edit_protein">
                 </div>
                 <div class="form-group">
-                    <label for="kategori">Jenis Kelamin:</label>
-                    <select class="form-control rounded-0" id="edit_riwayat" name="edit_riwayat">
-                        <option value=""></option>
-                    </select>
+                    <label for="edit_nama">Lemak:</label>
+                    <input type="text" class="form-control" id="edit_lemak" name="edit_lemak">
                 </div>
                 <div class="form-group">
-                    <label for="kategori">Riwayat Penyakit:</label>
-                    <select class="form-control rounded-0" id="edit_riwayat" name="edit_riwayat">
+                    <label for="edit_nama">Karbohidrat:</label>
+                    <input type="text" class="form-control" id="edit_karbohidrat" name="edit_karbohidrat">
+                </div>
+                <div class="form-group">
+                    <label for="kategori">Kategori:</label>
+                    <select class="form-control rounded-0" id="edit_kategori" name="edit_kategori">
                         <option value=""></option>
                     </select>
                     <!-- Tambahkan form input lainnya sesuai kebutuhan -->

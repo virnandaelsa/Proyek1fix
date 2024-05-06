@@ -30,12 +30,14 @@ Route::get('/lihatpengguna', function () {
 Route::get('/tambahpasien', function () {
     return view('admin/modaltambahpasien');
 });
-Route::get('/editpasien', function () {
-    return view('admin/modaleditpasien');
+
+Route::get('/lihatmakanan', function () {
+    return view('admin/lihatmakanan');
 });
-Route::get('/deletepasien', function () {
-    return view('admin/modaldeletepasien');
-});
+<<<<<<< HEAD
 Route::get('/lihatkonsul', function () {
     return view('admin/lihatkonsul');
 });
+=======
+
+>>>>>>> e8505d923008ebe75940f0c9d39f13063381b37f
