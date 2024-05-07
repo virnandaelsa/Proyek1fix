@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('id_pasien');
             $table->string('id_ahligizi');
             $table->string('kode_makanan');
-            $table->date('tgl_konsul');
+            $table->date('tgl_konsultasi');
+            $table->timestamps();
         });
     }
 
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('konsul');
     }
 };
