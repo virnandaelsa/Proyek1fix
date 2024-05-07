@@ -5,7 +5,7 @@
         <i class="fas fa-user fa-lg" style="color: #fff"></i>
       </div>
       <div class="info">
-        <a href="#" class="d-block">Alexander Pierce</a>
+        <a href="#" class="d-block">Admin</a>
       </div>
     </div>
 
