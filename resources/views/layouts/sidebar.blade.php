@@ -35,7 +35,19 @@
           <a href="/lihatpengguna" class="nav-link">
             <i class="nav-icon fas fa-users"></i>
             <p>
-              Kelola Akun
+              Kelola Akun Ahli Gizi
+            </p>
+          </a>
+          <a href="/lihatpengguna" class="nav-link">
+            <i class="nav-icon fas fa-users"></i>
+            <p>
+              Kelola Akun Chef
+            </p>
+          </a>
+          <a href="/lihatpengguna" class="nav-link">
+            <i class="nav-icon fas fa-users"></i>
+            <p>
+              Kelola Akun Pasein
             </p>
           </a>
           <a href="/lihatmakanan" class="nav-link">
