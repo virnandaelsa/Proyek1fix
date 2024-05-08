@@ -38,3 +38,7 @@ Route::get('/lihatmakanan', function () {
 Route::get('/lihatkonsul', function () {
     return view('admin/lihatkonsultasi');
 });
+
+Route::get('/home', function () {
+    return view('home');
+});
