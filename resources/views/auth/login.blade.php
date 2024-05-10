@@ -17,7 +17,7 @@
 <body class="hold-transition login-page">
 
 <div class="login-box">
-  <a href="" class="btn btn-primary mb-3 rounded-pill"><span class="fas fa-arrow-left fa-sm mr-1"></span>Halaman Utama</a>
+  <a href="{{ url('/home') }}" class="btn btn-primary mb-3 rounded-pill"><span class="fas fa-arrow-left fa-sm mr-1"></span>Halaman Utama</a>
   <!-- /.login-logo -->
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
