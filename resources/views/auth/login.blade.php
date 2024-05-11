@@ -28,7 +28,7 @@
       <form action="" method="post">
         @csrf
 
-        <label for="email">EMAIL</label>
+        <label for="email">NAMA</label>
         <div class="input-group mb-3">
           <input type="email" class="form-control" name="email" value="" placeholder="Enter your email">
           <div class="input-group-append">
@@ -38,7 +38,7 @@
           </div>
         </div>
 
-        <label for="password">PASSWORD</label>
+        <label for="password">ID</label>
         <div class="input-group mb-3">
           <input type="password" class="form-control" value="" name="password" placeholder="********">
           <div class="input-group-append">
