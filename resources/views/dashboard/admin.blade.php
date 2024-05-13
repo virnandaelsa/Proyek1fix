@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">  
   <title>Sistem Pendukung Keputusan Makanan Alternatif</title>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
@@ -26,6 +27,29 @@
   <!-- summernote -->
   <link rel="stylesheet" href="{{ asset('assets/plugins/summernote/summernote-bs4.min.css') }}">
    @yield('css')
+
+   <style>
+    .card {
+      background-color: #f7f7f7;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .card i {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+    .card p {
+      font-size: 24px;
+      margin: 0;
+    }
+    .card .label {
+      font-size: 18px;
+      color: #999;
+    }
+  </style>
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -38,24 +62,59 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
     </ul>
+
+    <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-    <li class="nav-item">
-        <a class="nav-link" href="" role="button" title="logout">
-            <img src="{{ asset('assets/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-3" alt="User Image" width="40" style="margin-top: -8px">
+      <li class="nav-item">
+        <a class="nav-link" href="/login" role="button" title="logout">
+            <img src="../../dist/img/log-out.png" alt="logout" width="30" style="margin-top: -5px">
         </a>
       </li>
     </ul>
   </nav>
   <!-- /.navbar -->
   @yield('content')
-  <main>
-        <div class="container">
-            <div class="card " >
-                <h1>Selamat Datang</h1>
-                <p class="text-sm">Dashboard Admin RS Bhayangkara</p>
-            </div>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Main content -->
+    <section class="content justify-content-center">
+      <div class="container-fluid">
+        <div class="card">
+          <div class="card-body">
+            <h1>Selamat Datang</h1>
+            <h3 class="text-sm">Dashboard Admin Rumah Sakit Bhayangkara</h3>
+          </div>
         </div>
-    </main>
+      </div>
+    </section>
+    <div class= "row justify-content-center">
+      <div class="col-md-3">
+        <div class="card card-body bg-primary text-white mb-3" style="display: flex; justify-content: space-between; align-items: center;">
+            <label>Jumlah Pasien</label>
+            <h2>0</h2>
+            <a href="/pasien" class="btn btn-link text-white" >Lihat</a>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card card-body bg-success text-white mb-3" style="display: flex; justify-content: space-between; align-items: center;">
+          <label>Jumlah Makanan</label>
+          <h2>0</h2>
+          <a href="/makanan" class="btn btn-link text-white" >Lihat</a>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card card-body bg-warning text-white mb-3" style="display: flex; justify-content: space-between; align-items: center;">
+          <label>Jumlah Konsultasi</label>
+          <h2>0</h2>
+          <a href="/konsul" class="btn btn-link text-white" >Lihat</a>
+        </div>
+      </div>
+    </div>
+    <!-- /.content -->
+  </div>
+  
+<!-- /.content-wrapper -->
+
   
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
