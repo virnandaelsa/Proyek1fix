@@ -54,7 +54,6 @@ Route::post('/update-chef/{id}', [ChefController::class, 'update'])
 Route::post('/delete-chef/{id}', [ChefController::class, 'destroy'])
     ->name('chef.destroy');
 
-
 Route::get('/pasien', [PasienController::class, 'index'])
     ->name('pasien.index');
 Route::get('/create-pasien', [PasienController::class, 'create'])

@@ -43,9 +43,9 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $makanan->kode_makanan }}</td>
                                         <td>{{ $makanan->nama_makanan }}</td>
-                                        <td>{{ $makanan->protein }}</td>
-                                        <td>{{ $makanan->lemak }}</td>
-                                        <td>{{ $makanan->karbohidrat }}</td>
+                                        <td>{{ $makanan->protein }} %</td>
+                                        <td>{{ $makanan->lemak }} %</td>
+                                        <td>{{ $makanan->karbohidrat }} %</td>
                                         <td>{{ $makanan->kategori->nama_kategori }}</td>
                                         <td>
                                             <div class="">
