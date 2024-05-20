@@ -9,7 +9,7 @@ class AhliGiziController extends Controller
 {
     public function index()
     {
-        $data = AhliGizi::all();
+        $data = AhliGizi::paginate(10);
         return view('admin.ahli-gizi.index', compact('data'));
     }
 

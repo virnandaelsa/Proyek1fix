@@ -3,6 +3,7 @@
 use App\Http\Controllers\AhliGiziController;
 use App\Http\Controllers\ChefController;
 use App\Http\Controllers\KonsulController;
+use App\Http\Controllers\MakananAlternativeController;
 use App\Http\Controllers\MakananController;
 use App\Http\Controllers\PasienController;
 use Illuminate\Support\Facades\Route;
@@ -92,3 +93,24 @@ Route::post('/update-konsul/{id}', [KonsulController::class, 'update'])
     ->name('konsul.update');
 Route::post('/delete-konsul/{id}', [KonsulController::class, 'destroy'])
     ->name('konsul.destroy');
+
+Route::get('/makanan-alternative', [MakananAlternativeController::class, 'index'])
+    ->name('makanan-alternative.index');
+Route::get('/create-makanan-alternative', [MakananAlternativeController::class, 'create'])
+    ->name('makanan-alternative.create');
+Route::post('/store-makanan-alternative', [MakananAlternativeController::class, 'store'])
+    ->name('makanan-alternative.store');
+Route::get('/edit-makanan-alternative/{id}', [MakananAlternativeController::class, 'edit'])
+    ->name('makanan-alternative.edit');
+Route::post('/update-makanan-alternative/{id}', [MakananAlternativeController::class, 'update'])
+    ->name('makanan-alternative.update');
+Route::post('/delete-makanan-alternative/{id}', [MakananAlternativeController::class, 'destroy'])
+    ->name('makanan-alternative.destroy');
+
+Route::post('/cek-protein', [KonsulController::class, 'cekProtein'])
+    ->name('konsul.cek-protein');
+Route::post('/cek-karbohidrat', [KonsulController::class, 'cekKarbohidrat'])
+    ->name('konsul.cek-karbohidrat');
+Route::post('/cek-lemak', [KonsulController::class, 'cekLemak'])
+    ->name('konsul.cek-lemak');
+

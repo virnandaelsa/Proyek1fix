@@ -64,6 +64,9 @@
                             </table>
                         </div>
                         <!-- /.card-body -->
+                        <div class="card-footer clearfix">
+                            {{ $data->links('pagination::bootstrap-5') }}
+                        </div>
                     </div>
                     <!-- /.card -->
                 </div>

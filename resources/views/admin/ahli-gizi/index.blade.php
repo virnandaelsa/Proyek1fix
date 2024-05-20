@@ -60,6 +60,9 @@
                             </table>
                         </div>
                         <!-- /.card-body -->
+                        <div class="card-footer clearfix">
+                            {{ $data->links() }}
+                        </div>
                     </div>
                     <!-- /.card -->
                 </div>
