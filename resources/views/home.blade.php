@@ -102,9 +102,6 @@
         margin-top: 15px;
         }
 
-        
-        
-
         .table-borderless tbody tr td {
             border-top: none; /* Menghapus garis atas */
             border-bottom: none; /* Menghapus garis bawah */
