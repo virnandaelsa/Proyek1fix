@@ -1,7 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
   <a href="../../index3.html" class="brand-link">
-    <img src="../../dist/img/diet_2.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+    <img src="../../dist/img/taco.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="">
     <span class="brand-text font-weight-light" style="font-size: 18px"> SPK Makanan Alternatif</span>
   </a>
 

@@ -14,10 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('chef', function (Blueprint $table) {
-            $table->id();
+            $table->string('nip')->primary();
             $table->string('nama');
             $table->string('no_tlp');
             $table->text('alamat');
+            $table->enum('status', ['aktif', 'tidak aktif'])->default('aktif');
             $table->timestamps();
         });
     }

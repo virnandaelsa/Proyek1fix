@@ -30,8 +30,8 @@ class KonsulController extends Controller
 
     public function create()
     {
-        $pasien = Pasien::orderBy('id', 'asc')->get();
-        $ahligizi = AhliGizi::orderBy('id', 'asc')->get();
+        $pasien = Pasien::orderBy('nomor_pasien', 'asc')->get();
+        $ahligizi = AhliGizi::orderBy('nip', 'asc')->get();
         $makanan = Makanan::orderBy('kode_makanan', 'asc')->get();
         $kode_makanan_alternative = MakananAlternative::orderBy('kode_makanan', 'asc')->get();
         return view('admin.konsultasi.create', compact('pasien', 'ahligizi', 'makanan', 'kode_makanan_alternative'))

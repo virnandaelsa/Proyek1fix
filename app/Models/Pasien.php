@@ -11,10 +11,13 @@ class Pasien extends Model
 
     protected $table = 'pasien';
 
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'nomor_pasien';
+
+    protected $keyType = 'string';
 
     protected $fillable = [
-        'name',
+        'nomor_pasien',
+        'nama',
         'no_tlp',
         'alamat',
         'jk',

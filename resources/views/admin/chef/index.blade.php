@@ -28,30 +28,29 @@
                             <!-- Table -->
                             <table id="example1" class="table table-bordered table-striped table-hover">
                                 <thead>
-                                    <th>NO</th>
+                                    <th>NIP</th>
                                     <th>NAMA</th>
                                     <th>NOMOR TELEPON</th>
                                     <th>ALAMAT</th>
+                                    <th>STATUS</th>
                                     <th>AKSI</th>
                                 </thead>
                                 <tbody>
                                     @foreach ( $data as $chef)
                                     <tr>
-                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $chef->nip }}</td>
                                         <td>{{ $chef->nama }}</td>
                                         <td>{{ $chef->no_tlp }}</td>
                                         <td>{{ $chef->alamat }}</td>
                                         <td>
-                                            <div class=";">
-                                                <!-- Button Edit -->
-                                                <a href="{{ route('chef.edit', $chef->id) }}" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
-
-                                                <!-- Button Hapus -->
-                                                <form action="{{ route('chef.destroy', $chef->id) }}" method="POST" class="d-inline">
-                                                    @csrf
-                                                    <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
-                                                </form>
-                                            </div>
+                                            @if ($chef->status == "aktif") 
+                                                <span class="badge bg-success">Aktif</span>
+                                            @else
+                                                <span class="badge bg-danger">Tidak Aktif</span>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            <a href="{{ route('chef.ubah-status-chef', $chef->nip) }}" class="btn btn-warning btn-sm text-bold">ubah</a>
                                         </td>
                                     </tr>
                                     @endforeach

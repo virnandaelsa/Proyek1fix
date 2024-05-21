@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">  
   <title>Sistem Pendukung Keputusan Makanan Alternatif</title>
 
-  <link rel="icon" href="../../dist/img/diet_2.png" type="image/x-icon">
+  <link rel="icon" href="../../dist/img/taco.png" type="image/x-icon">
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -45,7 +45,7 @@
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
         <a class="nav-link" href="" role="button" title="logout">
-            <img src="../../dist/img/log-out.png" alt="logout" width="30" style="margin-top: -5px">
+            <img src="../../dist/img/log-out.png" alt="logout" width="25" style="margin-top: -5px">
         </a>
       </li>
     </ul>

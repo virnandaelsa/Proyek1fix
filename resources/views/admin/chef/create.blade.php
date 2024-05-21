@@ -26,6 +26,10 @@
                             <form action="{{ route('chef.store') }}" method="POST">
                                 @csrf
                                 <div class="mb-3">
+                                    <label for="nip" class="form-label">Nip</label>
+                                    <input type="text" class="form-control" id="nip" name="nip">
+                                </div>
+                                <div class="mb-3">
                                     <label for="nama" class="form-label">Nama</label>
                                     <input type="text" class="form-control" id="nama" name="nama">
                                 </div>
