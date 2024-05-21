@@ -10,7 +10,7 @@ class PasienController extends Controller
 {
     public function index()
     {
-        $data = Pasien::all();
+        $data = Pasien::paginate(10);
         return view('admin.pasien.index', compact('data'));
     }
 

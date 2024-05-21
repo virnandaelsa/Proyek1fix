@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\MakananAlternative;
 use App\Models\RiwayatPenyakit;
 use Illuminate\Database\Seeder;
 
@@ -26,6 +27,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             RiwayatPenyakitSeeder::class,
             KategoriSeeder::class,
+            MakananAlternativeSeeder::class
         ]);
     }
 }

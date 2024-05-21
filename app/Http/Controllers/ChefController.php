@@ -9,7 +9,7 @@ class ChefController extends Controller
 {
     public function index()
     {
-        $data = Chef::all();
+        $data = Chef::paginate(10);
         return view('admin.chef.index', compact('data'));
     }
 
