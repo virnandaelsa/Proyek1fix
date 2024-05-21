@@ -34,7 +34,6 @@
                                     <th>MAKANAN</th>
                                     <th>MAKANAN ALTERNATIF</th>
                                     <th>TANGGAL KONSULTASI</th>
-                                    <th>AKSI</th>
                                 </thead>
                                 <tbody>
                                     @foreach ( $data as $konsul)
@@ -45,18 +44,6 @@
                                         <td>{{ $konsul->makanan->nama_makanan }}</td>
                                         <td>{!! $konsul->makanan_alternative !!}</td>
                                         <td>{{ $konsul->tgl_konsultasi }}</td>
-                                        <td>
-                                            <div class="">
-                                                <!-- Button Edit -->
-                                                <a href="{{ route('konsul.edit', $konsul->id) }}" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
-
-                                                <!-- Button Hapus -->
-                                                <form action="{{ route('konsul.destroy', $konsul->id) }}" method="POST" class="d-inline">
-                                                    @csrf
-                                                    <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
-                                                </form>
-                                            </div>
-                                        </td>
                                     </tr>
                                     @endforeach
                                     <!-- Tambahkan baris tabel lainnya di sini -->

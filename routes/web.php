@@ -87,12 +87,6 @@ Route::get('/create-konsul', [KonsulController::class, 'create'])
     ->name('konsul.create');
 Route::post('/store-konsul', [KonsulController::class, 'store'])
     ->name('konsul.store');
-Route::get('/edit-konsul/{id}', [KonsulController::class, 'edit'])
-    ->name('konsul.edit');
-Route::post('/update-konsul/{id}', [KonsulController::class, 'update'])
-    ->name('konsul.update');
-Route::post('/delete-konsul/{id}', [KonsulController::class, 'destroy'])
-    ->name('konsul.destroy');
 
 Route::get('/makanan-alternative', [MakananAlternativeController::class, 'index'])
     ->name('makanan-alternative.index');
@@ -113,4 +107,3 @@ Route::post('/cek-karbohidrat', [KonsulController::class, 'cekKarbohidrat'])
     ->name('konsul.cek-karbohidrat');
 Route::post('/cek-lemak', [KonsulController::class, 'cekLemak'])
     ->name('konsul.cek-lemak');
-
