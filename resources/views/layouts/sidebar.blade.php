@@ -34,7 +34,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="{{ route('ahli-gizi.index') }}" class="nav-link {{ request()->is('ahli-gizi*') ? 'active' : '' }}">
+              <a href="{{ route('ahli-gizi.index') }}" class="nav-link {{ request()->is('*ahli-gizi*') ? 'active' : '' }}">
                 <i class="nav-icon fas fa-users"></i>
                 <p>
                   Kelola Akun Ahli Gizi
@@ -42,7 +42,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="{{ route('chef.index') }}" class="nav-link {{ request()->is('chef*') ? 'active' : '' }}">
+              <a href="{{ route('chef.index') }}" class="nav-link {{ request()->is('*chef*') ? 'active' : '' }}">
                 <i class="nav-icon fas fa-users"></i>
                 <p>
                   Kelola Akun Chef
@@ -50,7 +50,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="{{ route('pasien.index') }}" class="nav-link {{ request()->is('pas*') ? 'active' : '' }}">
+              <a href="{{ route('pasien.index') }}" class="nav-link {{ request()->is('*pas*') ? 'active' : '' }}">
                 <i class="nav-icon fas fa-users"></i>
                 <p>
                   Kelola Akun Pasein
