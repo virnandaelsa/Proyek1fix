@@ -5,27 +5,26 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Pasien extends Model
+class MakananAlternative extends Model
 {
     use HasFactory;
 
-    protected $table = 'pasien';
+    protected $table = 'makanan_alternative';
 
-    protected $primaryKey = 'nomor_pasien';
+    protected $primaryKey = 'kode_makanan';
 
     protected $keyType = 'string';
 
     protected $fillable = [
-        'nomor_pasien',
-        'nama',
-        'no_tlp',
-        'alamat',
-        'jk',
+        'nama_makanan',
+        'karbohidrat',
+        'lemak',
+        'protein',
     ];
 
-    public function riwayat()
+    public function kategori()
     {
-        return $this->belongsTo(RiwayatPenyakit::class, 'id_riwayat');
+        return $this->belongsTo(Kategori::class, 'id_kategori');
     }
 
     public function konsul()

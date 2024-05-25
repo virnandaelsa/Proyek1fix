@@ -2,28 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\MakananAlternative;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
-use App\Models\Makanan;
 
-class MakananController extends Controller
+class MakananAlternativeController extends Controller
 {
-
     public function index()
     {
-        $data = Makanan::paginate(10);
-        return view('admin.makanan.index', compact('data'));
+        $data = MakananAlternative::paginate(10);
+        return view('admin.makanan-alternative.index', compact('data'));
     }
 
     public function create()
     {
         $data = Kategori::orderBy('id', 'asc')->get();
-        return view('admin.makanan.create', compact('data'));
+        return view('admin.makanan-alternative.create', compact('data'));
     }
 
     public function store(Request $request)
     {
-        $data = new Makanan;
+        $data = new MakananAlternative;
         $data->kode_makanan = $request->kode_makanan;
         $data->nama_makanan = $request->nama_makanan;
         $data->protein = $request->protein;
@@ -32,6 +31,6 @@ class MakananController extends Controller
         $data->id_kategori = $request->id_kategori;
         $data->save();
 
-        return redirect('/makanan');
+        return redirect('/makanan-alternative');
     }
 }

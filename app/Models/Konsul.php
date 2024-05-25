@@ -19,6 +19,7 @@ class Konsul extends Model
         'id_pasien',
         'id_ahligizi',
         'kode_makanan',
+        'kode_makanan_alternative',
         'tgl_konsultasi',
     ];
 
@@ -35,5 +36,10 @@ class Konsul extends Model
     public function makanan()
     {
         return $this->belongsTo(Makanan::class, 'kode_makanan');
+    }
+
+    public function makanan_alternative()
+    {
+        return $this->belongsTo(MakananAlternative::class, 'kode_makanan_alternative');
     }
 }

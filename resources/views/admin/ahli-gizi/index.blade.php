@@ -28,30 +28,29 @@
                             <!-- Table -->
                             <table id="example1" class="table table-bordered table-striped table-hover">
                                 <thead>
-                                    <th>NO</th>
+                                    <th>NIP</th>
                                     <th>NAMA</th>
                                     <th>NOMOR TELEPON</th>
                                     <th>ALAMAT</th>
+                                    <th>STATUS</th>
                                     <th>AKSI</th>
                                 </thead>
                                 <tbody>
                                     @foreach ( $data as $ahligizi)
                                     <tr>
-                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $ahligizi->nip }}</td>
                                         <td>{{ $ahligizi->nama }}</td>
                                         <td>{{ $ahligizi->no_tlp }}</td>
                                         <td>{{ $ahligizi->alamat }}</td>
                                         <td>
-                                            <div class="">
-                                                <!-- Button Edit -->
-                                                <a href="{{ route('ahli-gizi.edit', $ahligizi->id) }}" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
-
-                                                <!-- Button Hapus -->
-                                                <form action="{{ route('ahli-gizi.destroy', $ahligizi->id) }}" method="POST" class="d-inline">
-                                                    @csrf
-                                                    <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
-                                                </form>
-                                            </div>
+                                            @if ($ahligizi->status == "aktif") 
+                                                <span class="badge bg-success">Aktif</span>
+                                            @else
+                                                <span class="badge bg-danger">Tidak Aktif</span>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            <a href="{{ route('ahli-gizi.ubah-status-ahli-gizi', $ahligizi->nip) }}" class="btn btn-warning btn-sm text-bold">ubah</a>
                                         </td>
                                     </tr>
                                     @endforeach
@@ -60,6 +59,9 @@
                             </table>
                         </div>
                         <!-- /.card-body -->
+                        <div class="card-footer clearfix">
+                            {{ $data->links() }}
+                        </div>
                     </div>
                     <!-- /.card -->
                 </div>

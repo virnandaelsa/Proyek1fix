@@ -26,6 +26,10 @@
                             <form action="{{ route('pasien.store') }}" method="POST">
                                 @csrf
                                 <div class="mb-3">
+                                    <label for="nomor_pasien" class="form-label">Nomor Pasien</label>
+                                    <input type="text" class="form-control" id="nomor_pasien" name="nomor_pasien">
+                                </div>
+                                <div class="mb-3">
                                     <label for="nama" class="form-label">Nama</label>
                                     <input type="text" class="form-control" id="nama" name="nama">
                                 </div>
@@ -43,15 +47,6 @@
                                         <option value="">-- Pilih Jenis Kelamin --</option>
                                         <option value="Laki-laki">Laki-laki</option>
                                         <option value="Perempuan">Perempuan</option>
-                                    </select>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="riwayat_penyakit" class="form-label">Riwayat Penyakit</label>
-                                    <select name="riwayat_penyakit" id="riwayat_penyakit" class="form-control">
-                                        <option value="">-- Pilih Riwayat Penyakit --</option>
-                                        @foreach ($data as $riwayat_penyakit)
-                                            <option value="{{ $riwayat_penyakit->id }}">{{ $riwayat_penyakit->nama_penyakit }}</option>
-                                        @endforeach
                                     </select>
                                 </div>
                                 <a href="{{ route('pasien.index') }}" class="btn btn-secondary">Kembali</a>

@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('riwayat_penyakit', function (Blueprint $table) {
             $table->id();
+            $table->string('id_pasien');
             $table->string('nama_penyakit');
             $table->timestamps();
         });

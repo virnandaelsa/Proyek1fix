@@ -13,14 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('konsul', function (Blueprint $table) {
-            $table->id();
-            $table->string('id_pasien');
-            $table->string('id_ahligizi');
-            $table->string('id_riwayat_penyakit');
-            $table->string('kode_makanan');
-            $table->string('kode_makanan_alternative');
-            $table->date('tgl_konsultasi');
+        Schema::create('makanan_alternative', function (Blueprint $table) {
+            $table->string("kode_makanan")->primary();
+            $table->string("nama_makanan");
+            $table->integer("karbohidrat");
+            $table->integer("lemak");
+            $table->integer("protein");
+            $table->string("id_kategori");
             $table->timestamps();
         });
     }
@@ -32,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('konsul');
+        Schema::dropIfExists('makanan_alternative');
     }
 };

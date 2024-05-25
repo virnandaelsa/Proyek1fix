@@ -28,37 +28,22 @@
                             <!-- Table -->
                             <table class="table table-bordered">
                                 <thead>
-                                    <th>NO</th>
                                     <th>KODE MAKANAN</th>
                                     <th>NAMA MAKANAN</th>
-                                    <th>PROTEIN</th>
-                                    <th>LEMAK</th>
-                                    <th>KARBOHIDRAT</th>
+                                    <th>PROTEIN (g)</th>
+                                    <th>LEMAK (g)</th>
+                                    <th>KARBOHIDRAT (g)</th>
                                     <th>KATEGORI</th>
-                                    <th>AKSI</th>
                                 </thead>
                                 <tbody>
                                     @foreach ( $data as $makanan)
                                     <tr>
-                                        <td>{{ $loop->iteration }}</td>
                                         <td>{{ $makanan->kode_makanan }}</td>
                                         <td>{{ $makanan->nama_makanan }}</td>
-                                        <td>{{ $makanan->protein }} %</td>
-                                        <td>{{ $makanan->lemak }} %</td>
-                                        <td>{{ $makanan->karbohidrat }} %</td>
+                                        <td>{{ $makanan->protein }}</td>
+                                        <td>{{ $makanan->lemak }}</td>
+                                        <td>{{ $makanan->karbohidrat }}</td>
                                         <td>{{ $makanan->kategori->nama_kategori }}</td>
-                                        <td>
-                                            <div class="">
-                                                <!-- Button Edit -->
-                                                <a href="{{ route('makanan.edit', $makanan->kode_makanan) }}" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
-
-                                                <!-- Button Hapus -->
-                                                <form action="{{ route('makanan.destroy', $makanan->kode_makanan) }}" method="POST" class="d-inline">
-                                                    @csrf
-                                                    <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
-                                                </form>
-                                            </div>
-                                        </td>
                                     </tr>
                                     @endforeach
                                     <!-- Tambahkan baris tabel lainnya di sini -->
@@ -66,6 +51,9 @@
                             </table>
                         </div>
                         <!-- /.card-body -->
+                        <div class="card-footer clearfix">
+                            {{ $data->links('pagination::bootstrap-5') }}
+                        </div>
                     </div>
                     <!-- /.card -->
                 </div>

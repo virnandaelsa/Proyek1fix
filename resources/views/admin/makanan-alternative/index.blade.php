@@ -7,7 +7,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1>Konsultasi</h1>
+              <h1>Makanan</h1>
             </div>
           </div>
         </div><!-- /.container-fluid -->
@@ -20,30 +20,29 @@
                 <div class="col-12">
                     <div class="card mt-3">
                         <div class="card-header d-flex align-items-center">
-                            <h3 class="card-title">Data Konsultasi</h3>
-                            <a href="{{ route('konsul.create') }}" class="btn btn-primary ml-auto btn-sm"><i class="fas fa-plus fa-sm"></i> Tambah</a>
+                            <h3 class="card-title">Data Makanan Alternatif</h3>
+                            <a href="{{ route('makanan-alternative.create') }}" class="btn btn-primary ml-auto btn-sm"><i class="fas fa-plus fa-sm"></i> Tambah</a>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
                             <!-- Table -->
                             <table class="table table-bordered">
                                 <thead>
-                                    <th>NO</th>
-                                    <th>PASIEN</th>
-                                    <th>AHLI GIZI</th>
-                                    <th>MAKANAN</th>
-                                    <th>MAKANAN ALTERNATIF</th>
-                                    <th>TANGGAL KONSULTASI</th>
+                                    <th>KODE MAKANAN</th>
+                                    <th>NAMA MAKANAN</th>
+                                    <th>PROTEIN (g)</th>
+                                    <th>LEMAK (g)</th>
+                                    <th>KARBOHIDRAT (g)</th>
+                                    <th>KATEGORI</th>
                                 </thead>
                                 <tbody>
-                                    @foreach ( $data as $konsul)
+                                    @foreach ( $data as $makanan)
                                     <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $konsul->pasien->nama }}</td>
-                                        <td>{{ $konsul->ahligizi->nama }}</td>
-                                        <td>{{ $konsul->makanan->nama_makanan }}</td>
-                                        <td>{!! $konsul->makanan_alternative !!}</td>
-                                        <td>{{ $konsul->tgl_konsultasi }}</td>
+                                        <td>{{ $makanan->kode_makanan }}</td>
+                                        <td>{{ $makanan->nama_makanan }}</td>
+                                        <td>{{ $makanan->protein }}</td>
+                                        <td>{{ $makanan->lemak }}</td>
+                                        <td>{{ $makanan->karbohidrat }}</td>
                                     </tr>
                                     @endforeach
                                     <!-- Tambahkan baris tabel lainnya di sini -->
