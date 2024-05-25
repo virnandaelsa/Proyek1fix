@@ -53,7 +53,15 @@
               <a href="{{ route('pasien.index') }}" class="nav-link {{ request()->is('*pas*') ? 'active' : '' }}">
                 <i class="nav-icon fas fa-users"></i>
                 <p>
-                  Kelola Akun Pasein
+                  Kelola Akun Pasien
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ route('riwayat-penyakit.create') }}" class="nav-link {{ request()->is('*pas*') ? 'active' : '' }}">
+                <i class="nav-icon fas fa-users"></i>
+                <p>
+                  Riwayat Penyakit
                 </p>
               </a>
             </li>

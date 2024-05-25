@@ -32,4 +32,15 @@ class PasienController extends Controller
 
         return redirect('/pasien');
     }
+
+    public function getPasien($nomor_pasien)
+    {
+        $pasien = Pasien::where('nomor_pasien', $nomor_pasien)->first();
+
+        if ($pasien) {
+            return response()->json($pasien);
+        } else {
+            return response()->json(['message' => 'Pasien tidak ditemukan'], 404);
+        }
+    }
 }

@@ -6,6 +6,7 @@ use App\Http\Controllers\KonsulController;
 use App\Http\Controllers\MakananAlternativeController;
 use App\Http\Controllers\MakananController;
 use App\Http\Controllers\PasienController;
+use App\Http\Controllers\RiwayatPenyakitController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -83,3 +84,9 @@ Route::post('/cek-karbohidrat', [KonsulController::class, 'cekKarbohidrat'])
     ->name('konsul.cek-karbohidrat');
 Route::post('/cek-lemak', [KonsulController::class, 'cekLemak'])
     ->name('konsul.cek-lemak');
+
+Route::get('/create-penyakit', [RiwayatPenyakitController::class, 'create'])
+    ->name('riwayat-penyakit.create');
+Route::post('/tambah-penyakit', [RiwayatPenyakitController::class, 'store'])
+    ->name('riwayat-penyakit.store');
+Route::get('/pasien/{nomor_pasien}', [PasienController::class, 'getPasien']);
