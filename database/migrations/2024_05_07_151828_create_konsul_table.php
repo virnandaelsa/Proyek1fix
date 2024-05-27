@@ -17,9 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('id_pasien');
             $table->string('id_ahligizi');
-            $table->string('id_riwayat_penyakit');
             $table->string('kode_makanan');
-            $table->string('kode_makanan_alternative');
             $table->date('tgl_konsultasi');
             $table->timestamps();
         });

@@ -14,11 +14,6 @@ class KategoriSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Kategori::create([
-            ['nama_kategori' => 'Sayur'],
-            ['nama_kategori' => 'Lauk'],
-            ['nama_kategori' => 'Makanan Pokok'],
-            ['nama_kategori' => 'Buah'],
-        ]);
+        \App\Models\Kategori::factory(10)->create();
     }
 }

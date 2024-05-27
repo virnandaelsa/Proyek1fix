@@ -13,12 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('ahli_gizi', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama');
-            $table->string('no_tlp');
-            $table->text('alamat');
-            $table->timestamps();
+        Schema::table('makanan_alternative', function (Blueprint $table) {
+            $table->string('id_kategori')->after('protein');
         });
     }
 
@@ -29,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ahli_gizi');
+        Schema::table('makanan_alternative', function (Blueprint $table) {
+            //
+        });
     }
 };

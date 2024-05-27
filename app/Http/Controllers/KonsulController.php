@@ -34,6 +34,8 @@ class KonsulController extends Controller
         $pasien = RiwayatPenyakit::orderBy('id_pasien', 'asc')->get();
         $riwayat_penyakit = RiwayatPenyakit::orderBy('id_pasien', 'asc')->get();
         $ahligizi = AhliGizi::orderBy('nip', 'asc')->get();
+        $pasien = Pasien::orderBy('id', 'asc')->get();
+        $ahligizi = AhliGizi::orderBy('id', 'asc')->get();
         $makanan = Makanan::orderBy('kode_makanan', 'asc')->get();
         $kode_makanan_alternative = MakananAlternative::orderBy('kode_makanan', 'asc')->get();
         return view('admin.konsultasi.create', compact('pasien', 'ahligizi', 'makanan', 'kode_makanan_alternative'))
@@ -130,5 +132,36 @@ class KonsulController extends Controller
         return redirect('/konsul');
     }
 
-    
+    public function edit($id)
+    {
+        $data = Konsul::find($id);
+        $pasien = Pasien::orderBy('id', 'asc')->get();
+        $ahligizi = AhliGizi::orderBy('id', 'asc')->get();
+        $makanan = Makanan::orderBy('kode_makanan', 'asc')->get();
+        $kode_makanan_alternative = MakananAlternative::orderBy('kode_makanan', 'asc')->get();
+        $makanan_alternative_array = explode(',', $data->kode_makanan_alternative);
+        
+        return view('admin.konsultasi.edit', compact('data', 'pasien', 'ahligizi', 'makanan', 'kode_makanan_alternative', 'makanan_alternative_array' ));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $data = Konsul::find($id);
+        $data->id_pasien = $request->id_pasien;
+        $data->id_ahligizi = $request->id_ahligizi;
+        $data->kode_makanan = $request->kode_makanan;
+        $data->kode_makanan_alternative = implode(',', $request->kode_makanan_alternative);
+        $data->tgl_konsultasi = $request->tgl_konsultasi;
+        $data->update();
+
+        return redirect('/konsul');
+    }
+
+    public function destroy($id)
+    {
+        $data = Konsul::find($id);
+        $data->delete();
+
+        return redirect('/konsul');
+    }
 }

@@ -28,20 +28,35 @@
                             <!-- Table -->
                             <table class="table table-bordered">
                                 <thead>
-                                    <th>NOMOR PASIEN</th>
+                                    <th>NO</th>
                                     <th>NAMA</th>
                                     <th>NOMOR TELEPON</th>
                                     <th>ALAMAT</th>
                                     <th>JENIS KELAMIN</th>
+                                    <th>RIWAYAT PENYAKIT</th>
+                                    <th>AKSI</th>
                                 </thead>
                                 <tbody>
                                     @foreach ( $data as $pasien)
                                     <tr>
-                                        <td>{{ $pasien->nomor_pasien }}</td>
+                                        <td>{{ $loop->iteration }}</td>
                                         <td>{{ $pasien->nama }}</td>
                                         <td>{{ $pasien->no_tlp }}</td>
                                         <td>{{ $pasien->alamat }}</td>
                                         <td>{{ $pasien->jk }}</td>
+                                        <td>{{ $pasien->riwayat->nama_penyakit }}</td>
+                                        <td>
+                                            <div class="">
+                                                <!-- Button Edit -->
+                                                <a href="{{ route('pasien.edit', $pasien->id) }}" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
+
+                                                <!-- Button Hapus -->
+                                                <form action="{{ route('pasien.destroy', $pasien->id) }}" method="POST" class="d-inline">
+                                                    @csrf
+                                                    <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                                                </form>
+                                            </div>
+                                        </td>
                                     </tr>
                                     @endforeach
                                     <!-- Tambahkan baris tabel lainnya di sini -->

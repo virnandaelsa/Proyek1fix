@@ -21,8 +21,7 @@ class AhliGiziController extends Controller
     public function store(Request $request)
     {
         $data = new AhliGizi;
-        $data->nip    = $request->nip;
-        $data->nama   = $request->nama;
+        $data->nama = $request->nama;
         $data->no_tlp = $request->no_tlp;
         $data->alamat = $request->alamat;
         $data->save();
@@ -31,13 +30,20 @@ class AhliGiziController extends Controller
 
     }
 
-    public function ubahStatus($id)
+    public function edit($id)
     {
         $data = AhliGizi::find($id);
-        if ($data) {
-            $data->status = $data->status == 'aktif' ? 'tidak aktif' : 'aktif';
-            $data->update();
-        }
+        return view('admin.ahli-gizi.edit', compact('data'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $data = AhliGizi::find($id);
+        $data->nama = $request->nama;
+        $data->no_tlp = $request->no_tlp;
+        $data->alamat = $request->alamat;
+        $data->update();
+
         return redirect('/ahli-gizi');
     }
 
@@ -50,5 +56,13 @@ class AhliGiziController extends Controller
         } else {
             return response()->json(['message' => 'Ahli Gizi tidak ditemukan'], 404);
         }
+    }
+
+    public function destroy($id)
+    {
+        $data = AhliGizi::find($id);
+        $data->delete();
+
+        return redirect('/ahli-gizi');
     }
 }

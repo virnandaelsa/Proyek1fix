@@ -19,7 +19,6 @@ return new class extends Migration
             $table->integer("karbohidrat");
             $table->integer("lemak");
             $table->integer("protein");
-            $table->string("id_kategori");
             $table->timestamps();
         });
     }

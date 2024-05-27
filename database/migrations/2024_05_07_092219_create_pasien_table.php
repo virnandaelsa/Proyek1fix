@@ -14,11 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('pasien', function (Blueprint $table) {
-            $table->string('nomor_pasien')->primary();
+            $table->id();
             $table->string('nama');
             $table->string('no_tlp');
             $table->text('alamat');
             $table->enum('jk', ['Laki-laki', 'Perempuan']);
+            $table->string('id_riwayat');
             $table->timestamps();
         });
     }

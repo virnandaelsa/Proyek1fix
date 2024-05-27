@@ -11,12 +11,7 @@ class AhliGizi extends Model
 
     protected $table = 'ahli_gizi';
 
-    protected $primaryKey = 'nip';
-
-    protected $keyType = 'string';
-
     protected $fillable = [
-        'nip',
         'nama',
         'no_tlp',
         'alamat',  

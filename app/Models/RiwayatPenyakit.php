@@ -14,7 +14,7 @@ class RiwayatPenyakit extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'id_pasien','nama_penyakit',
+        'nama_penyakit',
     ];
 
     public function pasien()
