@@ -7,6 +7,7 @@ use App\Models\Konsul;
 use App\Models\Pasien;
 use App\Models\Makanan;
 use App\Models\MakananAlternative;
+use App\Models\RiwayatPenyakit;
 use Illuminate\Http\Request;
 
 class KonsulController extends Controller
@@ -30,11 +31,13 @@ class KonsulController extends Controller
 
     public function create()
     {
-        $pasien = Pasien::orderBy('nomor_pasien', 'asc')->get();
+        $pasien = RiwayatPenyakit::orderBy('id_pasien', 'asc')->get();
+        $riwayat_penyakit = RiwayatPenyakit::orderBy('id_pasien', 'asc')->get();
         $ahligizi = AhliGizi::orderBy('nip', 'asc')->get();
         $makanan = Makanan::orderBy('kode_makanan', 'asc')->get();
         $kode_makanan_alternative = MakananAlternative::orderBy('kode_makanan', 'asc')->get();
         return view('admin.konsultasi.create', compact('pasien', 'ahligizi', 'makanan', 'kode_makanan_alternative'))
+            ->with('selected_riwayat_penyakit', old('id_pasien'))
             ->with('selected_makanan', old('kode_makanan'))
             ->with('selected_makanan_alternative', old('kode_makanan_alternative'))
             ->with('selected_pasien', old('id_pasien'))
@@ -54,8 +57,8 @@ class KonsulController extends Controller
             ->orderBy('kode_makanan', 'asc')
             ->get();
 
-        $pasien = Pasien::orderBy('id', 'asc')->get();
-        $ahligizi = AhliGizi::orderBy('id', 'asc')->get();
+        $pasien = Pasien::orderBy('nomor_pasien', 'asc')->get();
+        $ahligizi = AhliGizi::orderBy('nip', 'asc')->get();
         $makanan = Makanan::orderBy('kode_makanan', 'asc')->get();
 
         return view('admin.konsultasi.create', compact('pasien', 'ahligizi', 'makanan', 'kode_makanan_alternative'))
@@ -127,4 +130,5 @@ class KonsulController extends Controller
         return redirect('/konsul');
     }
 
+    
 }

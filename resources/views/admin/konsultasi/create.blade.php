@@ -26,26 +26,25 @@
                             <form action="{{ route('konsul.store') }}" method="POST">
                                 @csrf
                                 <div class="mb-3">
-                                    <label for="id_pasien" class="form-label">Nama Pasien</label>
-                                    <select name="id_pasien" id="id_pasien" class="form-control">
-                                        <option value="">-- Pilih Pasien --</option>
-                                        @foreach ($pasien as $data_pasien)
-                                            <option value="{{ $data_pasien->id }}" {{ old('id', $selected_pasien ?? '') == $data_pasien->id ? 'selected' : '' }}>
-                                                {{ $data_pasien->nama }}
-                                            </option>
-                                        @endforeach
-                                    </select>
+                                    <label for="pasien_search" class="form-label">Nomor Pasien</label>
+                                    <input type="text" class="form-control" id="pasien_search">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="id_ahligizi" class="form-label">Nama Ahli Gizi</label>
-                                    <select name="id_ahligizi" id="id_ahligizi" class="form-control">
-                                        <option value="">-- Pilih Ahli Gizi --</option>
-                                        @foreach ($ahligizi as $data_ahligizi)
-                                            <option value="{{ $data_ahligizi->id }}" {{ old('id', $selected_ahligizi ?? '') == $data_ahligizi->id ? 'selected' : '' }}>
-                                                {{ $data_ahligizi->nama }}
-                                            </option>
-                                        @endforeach
-                                    </select>
+                                    <label for="nama" class="form-label">Nama Pasien</label>
+                                    <input type="text" class="form-control" id="nama" name="nama" readonly>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="penyakit" class="form-label">Riwayat Penyakit</label>
+                                    <div id="penyakit-list">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="ahli-gizi" class="form-label">NIP</label>
+                                    <input type="text" class="form-control" id="ahli-gizi">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="nama_ahligizi" class="form-label">Nama Ahli Gizi</label>
+                                    <input type="text" class="form-control" id="nama_ahligizi" name="nama_ahligizi" readonly>
                                 </div>
                                 <div class="mb-3">
                                     <label for="kode_makanan" class="form-label">Makanan</label>
@@ -102,5 +101,89 @@
     </section>
     <!-- /.content -->
 </div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#pasien_search').on('input', function() {
+            var id_pasien = $(this).val();
+            console.log("ID Pasien:", id_pasien);
+            if (id_pasien) {
+                $.ajax({
+                    url: '/pasien/' + id_pasien,
+                    type: "GET",
+                    dataType: "json",
+                    success: function(data) {
+                        console.log("Data Pasien:", data);
+                        if (data) {
+                            $('#nama').val(data.nama);  
+                        } else {
+                            $('#nama').val('');
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("Error fetching pasien:", status, error);
+                        $('#nama').val('');
+                    }
+                });
+
+                $.ajax({
+                    url: '/riwayatpenyakit/' + id_pasien,
+                    type: "GET",
+                    dataType: "json",
+                    success: function(data) {
+                        console.log("Riwayat Penyakit:", data);
+                        if (data.length > 0) {
+                            var riwayatHtml = '<ul>';
+                            data.forEach(function(penyakit) {
+                                riwayatHtml += '<li>' + penyakit.nama_penyakit + '</li>';
+                            });
+                            riwayatHtml += '</ul>';
+                            $('#penyakit-list').html(riwayatHtml);
+                        } else {
+                            $('#penyakit-list').html('<p>Tidak ada riwayat penyakit yang ditemukan.</p>');
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("Error fetching riwayat penyakit:", status, error);
+                        $('#penyakit-list').html('<p>Terjadi kesalahan saat mengambil riwayat penyakit.</p>');
+                    }
+                });
+
+            } else {
+                $('#nama').val('');
+                $('#penyakit-list').html('');
+            }
+        });
+
+        $('#ahli-gizi').on('input', function() {
+            var nip = $(this).val();
+            console.log("NIP Ahli Gizi:", nip);
+            if (nip) {
+                $.ajax({
+                    url: '/ahli_gizi/' + nip,
+                    type: "GET",
+                    dataType: "json",
+                    success: function(data) {
+                        console.log("Data Ahli Gizi:", data);
+                        if (data) {
+                            $('#nama_ahligizi').val(data.nama);
+                        } else {
+                            $('#nama_ahligizi').val('');
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("Error fetching ahli gizi:", status, error);
+                        $('#nama_ahligizi').val('');
+                    }
+                });
+            } else {
+                $('#nama_ahligizi').val('');
+            }
+        });
+    });
+</script>
 
 @endsection
